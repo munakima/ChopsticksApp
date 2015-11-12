@@ -1,0 +1,12 @@
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\Modules\obj\Debug\Modules.csprojResolveAssemblyReference.cache
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\Modules\bin\Debug\Modules.dll.config
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\Modules\bin\Debug\Modules.dll
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\Modules\bin\Debug\Modules.pdb
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\Modules\bin\Debug\EntityFramework.dll
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\Modules\bin\Debug\EntityFramework.SqlServer.dll
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\Modules\bin\Debug\Models.dll
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\Modules\bin\Debug\Models.pdb
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\Modules\bin\Debug\EntityFramework.xml
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\Modules\bin\Debug\EntityFramework.SqlServer.xml
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\Modules\obj\Debug\Modules.dll
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\Modules\obj\Debug\Modules.pdb

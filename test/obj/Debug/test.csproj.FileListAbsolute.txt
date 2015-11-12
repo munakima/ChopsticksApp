@@ -1,0 +1,12 @@
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\test.exe.config
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\test.exe
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\test.pdb
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\Modules.dll
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\EntityFramework.dll
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\Modules.pdb
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\EntityFramework.xml
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\obj\Debug\test.exe
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\obj\Debug\test.pdb
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\EntityFramework.SqlServer.dll
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\EntityFramework.SqlServer.xml

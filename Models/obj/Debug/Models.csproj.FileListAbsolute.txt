@@ -1,0 +1,4 @@
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\Models\bin\Debug\Models.dll
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\Models\bin\Debug\Models.pdb
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\Models\obj\Debug\Models.dll
+d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\Models\obj\Debug\Models.pdb
