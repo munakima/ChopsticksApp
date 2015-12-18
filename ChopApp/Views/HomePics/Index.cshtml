@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Models.HomePic>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container1">
+    <div class="image-slider-wrapper">
+        <ul id="image_slider">
+            @foreach (var pic in Model)
+            {
+                <li><img style="width:1200px;height:800px" src="@pic.Url"></li>
+            }
+
+        </ul>
+    </div>
+
+    </div>

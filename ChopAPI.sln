@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChopAPI", "ChopAPI\ChopAPI.csproj", "{58989242-A5E8-4091-9332-86DAD98A5BDD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChopClient", "ChopClient\ChopClient.csproj", "{3C42CBB0-36BB-478D-B1A6-9BD5CA1277CA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChopApp", "ChopApp\ChopApp.csproj", "{50F4667F-A778-4ADF-B67B-A6D15E0C6479}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{14BB94C6-11DB-4090-A846-C6522BBAE777}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules", "Modules\Modules.csproj", "{AAD79DF3-2361-4624-BD25-18898A762B5A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "Modules\DAL.csproj", "{AAD79DF3-2361-4624-BD25-18898A762B5A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{EA4FC5C0-5198-40F4-835E-1C7995A48E81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{A0136BDD-023A-49B4-BC1D-87104F90185E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChopDAL_API", "ChopDAL_API\ChopDAL_API.csproj", "{047A4A29-687B-4200-97A8-BD9D9E6FEB40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChopBLL_API", "ChopBLL_API\ChopBLL_API.csproj", "{F3DB1167-3EF4-4CDD-B8F0-994A36F22EE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,14 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{58989242-A5E8-4091-9332-86DAD98A5BDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58989242-A5E8-4091-9332-86DAD98A5BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{58989242-A5E8-4091-9332-86DAD98A5BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{58989242-A5E8-4091-9332-86DAD98A5BDD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C42CBB0-36BB-478D-B1A6-9BD5CA1277CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C42CBB0-36BB-478D-B1A6-9BD5CA1277CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C42CBB0-36BB-478D-B1A6-9BD5CA1277CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C42CBB0-36BB-478D-B1A6-9BD5CA1277CA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{50F4667F-A778-4ADF-B67B-A6D15E0C6479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{50F4667F-A778-4ADF-B67B-A6D15E0C6479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50F4667F-A778-4ADF-B67B-A6D15E0C6479}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +39,18 @@ Global
 		{EA4FC5C0-5198-40F4-835E-1C7995A48E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA4FC5C0-5198-40F4-835E-1C7995A48E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA4FC5C0-5198-40F4-835E-1C7995A48E81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0136BDD-023A-49B4-BC1D-87104F90185E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0136BDD-023A-49B4-BC1D-87104F90185E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0136BDD-023A-49B4-BC1D-87104F90185E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0136BDD-023A-49B4-BC1D-87104F90185E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{047A4A29-687B-4200-97A8-BD9D9E6FEB40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{047A4A29-687B-4200-97A8-BD9D9E6FEB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{047A4A29-687B-4200-97A8-BD9D9E6FEB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{047A4A29-687B-4200-97A8-BD9D9E6FEB40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3DB1167-3EF4-4CDD-B8F0-994A36F22EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3DB1167-3EF4-4CDD-B8F0-994A36F22EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3DB1167-3EF4-4CDD-B8F0-994A36F22EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3DB1167-3EF4-4CDD-B8F0-994A36F22EE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

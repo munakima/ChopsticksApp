@@ -17,12 +17,27 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                <img src="~/Content/img/logo.jpg" />
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Menu<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>Buffet</li>
+                            <li><a>@Html.ActionLink("Chinese", "ChineseBuffet", "Menus")</a></li>
+                            <li><a>@Html.ActionLink("Running Sushi", "SushiBuffet", "Menus")</a></li>
+                            <li class="divider"></li>
+                            <li>Take away</li>
+                            <li><a>@Html.ActionLink("Chinese", "ChineseTakeAway", "Menus")</a></li>
+                            <li><a>@Html.ActionLink("Sushi", "SushiTakeAway", "Menus")</a></li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Booking", "Index", "Booking")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -32,13 +47,31 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+        <footer class="inner">
+                <div class="col-md-5" id="divleft">
+                    <h2 style="font-weight:800;">Opening Hours</h2>
+                    <br />
+                    <h4>14:00am - 21:30pm</h4>
+                </div>
+               <div class="col-md-1"><div class="vr"></div> </div>
+                <div class="col-md-5" id="divright">
+                    <h2 style="font-weight:800;">Contact Details</h2>
+                    <br />
+                    <h4>Adress: Jagtvej 45, 6705 Esbjerg</h4>
+                    <h4>T: 86 16 81 68</h4>
+                    <br />
+               </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-</body>
-</html>
+                <br />
+                <br />
+
+              
+
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>

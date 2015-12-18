@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Modules
+namespace DAL
 {
     using System;
     using System.Data.Entity;
@@ -25,6 +25,11 @@ namespace Modules
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Booking> Bookings { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Food> Foods { get; set; }
         public virtual DbSet<HomePic> HomePics { get; set; }
+        public virtual DbSet<Menu> Menus { get; set; }
+        public virtual DbSet<MenuType> MenuTypes { get; set; }
     }
 }

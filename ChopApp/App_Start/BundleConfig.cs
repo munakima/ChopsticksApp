@@ -27,6 +27,8 @@ namespace ChopApp
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                           "~/Content/Image-Slider-LnR.css",
+                          "~/Content/foot.css",
+                          "~/Content/contact.css",
                       "~/Content/site.css"));
         }
     }

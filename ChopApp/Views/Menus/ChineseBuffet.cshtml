@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div style="background:black;color:white;height:700px;padding-top:30px; margin-top:30px;">
+    <h1 style="font-weight:800;text-align:center"> Chinese Buffet Menu</h1>
+    <hr style="border:3px double #F00" width="90%" size="3" />
+    <ol>
+        @foreach (var menu in Model)
+        {
+            <li class=" col-md-6">
+                <h3>@menu.food.Name</h3>
+                <h4>@menu.food.Detail</h4>
+            </li>
+        }
+    </ol>
+    </div>

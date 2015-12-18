@@ -54,13 +54,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Modules\Modules.csproj">
+    <ProjectReference Include="..\Modules\DAL.csproj">
       <Project>{aad79df3-2361-4624-bd25-18898a762b5a}</Project>
-      <Name>Modules</Name>
+      <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

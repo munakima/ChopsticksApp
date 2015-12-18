@@ -1,0 +1,23 @@
+﻿.contract {
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+ opacity:1; 
+  margin-bottom:10px ;  background-color: #333333;padding-bottom:20px;
+ background:black;color:white;padding-top:30px; margin-top:20px; filter:1;opacity:1 
+}
+.contract h1{
+    text-align:center;font-weight:900
+}
+.contract div,
+.contract h4,
+.contract address,
+.contract iframe,
+.contract h2
+{
+       color: white;
+      position: relative;
+       padding-left:30px;
+}

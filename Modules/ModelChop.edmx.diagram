@@ -4,8 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f65df483f985427c8aa9cd12dcf0ba70" Name="Diagram1">
-        <EntityTypeShape EntityType="ChopsticksDBModel.HomePic" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="364a16bae72c4e139c6c77b4dd360bc4" Name="Diagram1">
+        <EntityTypeShape EntityType="ChopsticksDBModel.Booking" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChopsticksDBModel.Category" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChopsticksDBModel.Food" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChopsticksDBModel.HomePic" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChopsticksDBModel.Menu" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChopsticksDBModel.MenuType" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="ChopsticksDBModel.FK_Food_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="ChopsticksDBModel.FK_Menu_Food" ManuallyRouted="false" />
+        <AssociationConnector Association="ChopsticksDBModel.FK_Menu_MenuType" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,28 +1,52 @@
-﻿.container1{
-
-	height:600px;
-	padding:20px;
-	border:1px solid gray;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	box-sizing:border-box;
-  background: black;
+﻿.container1 {
+    height: 600px;
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #484848 ;
+     
+    /*opacity: 0.60;  firefox, opera, safari, chrome */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=50)"; /* IE 8 */
+   /* filter: alpha(opacity=50);  IE 4, 5, 6 and 7 */
+    zoom: 1; /* so the element "hasLayout"
+    /* or, to trigger "hasLayout" set a width or height */
 }
 
-.image-slider-wrapper{
-	overflow: hidden;
+    .container1 img,
+    .container1 div,
+    .container1 ul,
+    .container1 li {
+        position: relative;
+    }
+
+.opacity50 {
+   opacity: 0.60; /* firefox, opera, safari, chrome */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=50)"; /* IE 8 */
+    filter: alpha(opacity=50); /* IE 4, 5, 6 and 7 */
+    zoom: 1; /* so the element "hasLayout"
+    /* or, to trigger "hasLayout" set a width or height */
 }
-#image_slider{
-	position: relative;
-	overflow: hidden;
-	height: 540px;
-	padding:0;
-	left:0;
+
+.image-slider-wrapper {
+    overflow: hidden;
 }
-#image_slider li{
-	position:relative;
-	max-width: 100%;
-	float:left;
-	list-style: none;
-	left: 0;
+
+#image_slider {
+    position: relative;
+    overflow: hidden;
+    height: 540px;
+    padding: 0;
+    left: 0;
 }
+
+    #image_slider li {
+        position: relative;
+        max-width: 100%;
+        float: left;
+        list-style: none;
+        left: 0;
+    }
+
+
+

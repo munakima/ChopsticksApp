@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Models.Booking>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="background:white;padding:30px;margin-top:80px">
+    <h1 style="font-weight:900;text-align:center">Reservation List</h1>
+     <hr/>
+    
+    <br />
+   
+    <table cellpadding="2" cellspacing="2" border="1" class="table table-striped table-hover ">
+        <tr>
+            <th width="15%">Name</th>
+            <th width="15%">Phone number</th>
+            <th width="5%">Person(Adult)</th>
+            <th width="5%">Baby number</th>
+            <th width="15%">Arrave time</th>
+            <th width="15%">When book</th>
+            <th width="20%">Action</th>
+        </tr>
+        @foreach (var b in Model)
+        {
+            <tr>
+                <td>@b.CustName</td>
+                <td>@b.CustPhoneNum</td>
+                <td>@b.CustPersonNum</td>
+                <td>@b.CustBabyNum</td>
+                <td>@b.BookingTime</td>
+                <td>@b.Nowday</td>
+                <td>
+                    &nbsp; &nbsp; <a class="btn btn-danger" onclick="return confirm('Are you sure?')"
+                                     href="@Url.Action("Delete", "AdminBooking", new { id = b.Id })">Delete</a> &nbsp; &nbsp;
+                    
+             
+                </td>
+            </tr>
+        }
+
+
+    </table>
+
+</div>
+

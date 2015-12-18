@@ -1,12 +1,15 @@
 d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\test.exe.config
 d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\test.exe
 d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\test.pdb
-d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\Modules.dll
 d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\EntityFramework.dll
-d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\Modules.pdb
 d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\EntityFramework.xml
 d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\obj\Debug\test.csprojResolveAssemblyReference.cache
 d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\obj\Debug\test.exe
 d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\obj\Debug\test.pdb
 d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\EntityFramework.SqlServer.dll
 d:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\DAL.dll
+D:\Users\munaki\Documents\visual studio 2013\Projects\ChopAPI\test\bin\Debug\DAL.pdb
+D:\Users\munaki\documents\visual studio 2013\Projects\backup\1212\ChopAPI\test\bin\Debug\test.exe.config
+D:\Users\munaki\documents\visual studio 2013\Projects\backup\1212\ChopAPI\test\obj\Debug\test.exe
+D:\Users\munaki\documents\visual studio 2013\Projects\backup\1212\ChopAPI\test\obj\Debug\test.pdb

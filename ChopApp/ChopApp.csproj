@@ -12,7 +12,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ChopApp</RootNamespace>
-    <AssemblyName>ChopApp</AssemblyName>
+    <AssemblyName>ChopAPI</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -160,25 +160,35 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Admin\AdminBookingController.cs" />
+    <Compile Include="Controllers\Admin\AdminFoodController.cs" />
+    <Compile Include="Controllers\Admin\AdminMenuController.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\MenusController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomePicsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\BLLServiceGateway.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Homepic.cs" />
-    <Compile Include="Models\HomepicClient.cs" />
+    <Compile Include="Controllers\Admin\AdminHomepicController.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\HomepicViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\foot.css" />
     <Content Include="Content\homepic.css" />
     <Content Include="Content\Image-Slider-LnR.css" />
+    <Content Include="Content\img\background.jpg" />
+    <Content Include="Content\contact.css" />
+    <Content Include="Content\img\logo.jpg" />
     <Content Include="Content\img\Slide.jpg" />
     <Content Include="Content\img\Slide2.jpg" />
     <Content Include="Content\img\Slide3.jpg" />
@@ -236,6 +246,29 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\HomePics\Index.cshtml" />
+    <Content Include="Views\AdminHomepic\Index.cshtml" />
+    <Content Include="Views\AdminHomepic\Create.cshtml" />
+    <Content Include="Views\AdminHomepic\Edit.cshtml" />
+    <Content Include="Views\Menu\Index.cshtml" />
+    <Content Include="Views\Menus\Index.cshtml" />
+    <Content Include="Views\Menus\ChineseBuffet.cshtml" />
+    <Content Include="Views\Menus\SushiBuffet.cshtml" />
+    <Content Include="Views\Menus\ChineseTakeAway.cshtml" />
+    <Content Include="Views\Menus\SushiTakeAway.cshtml" />
+    <Content Include="Views\AdminFood\Index.cshtml" />
+    <Content Include="Views\AdminFood\Create.cshtml" />
+    <Content Include="Views\AdminFood\Edit.cshtml" />
+    <Content Include="Views\AdminMenu\CreateSushiBuffet.cshtml" />
+    <Content Include="Views\AdminMenu\AdminSushiBuffet.cshtml" />
+    <Content Include="Views\Booking\Index.cshtml" />
+    <Content Include="Views\AdminBooking\Index.cshtml" />
+    <Content Include="Views\AdminMenu\AdminSushiTake.cshtml" />
+    <Content Include="Views\AdminMenu\CreateSushiTake.cshtml" />
+    <Content Include="Views\AdminMenu\AdminChineseTake.cshtml" />
+    <Content Include="Views\AdminMenu\CreateChineseTake.cshtml" />
+    <Content Include="Views\AdminMenu\AdminChineseBuffet.cshtml" />
+    <Content Include="Views\AdminMenu\CreateChineseBuffet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -249,6 +282,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{14bb94c6-11db-4090-a846-c6522bbae777}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

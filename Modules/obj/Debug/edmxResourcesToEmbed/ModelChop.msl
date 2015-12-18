@@ -1,11 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ChopsticksDBModelStoreContainer" CdmEntityContainer="ChopsticksDBEntities">
+    <EntitySetMapping Name="Bookings">
+      <EntityTypeMapping TypeName="ChopsticksDBModel.Booking">
+        <MappingFragment StoreEntitySet="Booking">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CustName" ColumnName="CustName" />
+          <ScalarProperty Name="CustPhoneNum" ColumnName="CustPhoneNum" />
+          <ScalarProperty Name="CustPersonNum" ColumnName="CustPersonNum" />
+          <ScalarProperty Name="CustBabyNum" ColumnName="CustBabyNum" />
+          <ScalarProperty Name="Nowday" ColumnName="Nowday" />
+          <ScalarProperty Name="BookingTime" ColumnName="BookingTime" />
+          <ScalarProperty Name="TableNum" ColumnName="TableNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="ChopsticksDBModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Foods">
+      <EntityTypeMapping TypeName="ChopsticksDBModel.Food">
+        <MappingFragment StoreEntitySet="Food">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CategaryId" ColumnName="CategaryId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="HomePics">
       <EntityTypeMapping TypeName="ChopsticksDBModel.HomePic">
         <MappingFragment StoreEntitySet="HomePic">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Url" ColumnName="Url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="ChopsticksDBModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MenuTypeId" ColumnName="MenuTypeId" />
+          <ScalarProperty Name="FoodId" ColumnName="FoodId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuTypes">
+      <EntityTypeMapping TypeName="ChopsticksDBModel.MenuType">
+        <MappingFragment StoreEntitySet="MenuType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -1,4 +1,8 @@
 ﻿body {
+    background: url('img/background.jpg')repeat scroll 0 0 / 100% 100% transparent !important;
+    height: 100%;
+    background-color:#ffffff;
+    width:100%;
     padding-top: 50px;
     padding-bottom: 20px;
 }

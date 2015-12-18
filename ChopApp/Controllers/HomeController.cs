@@ -1,4 +1,6 @@
-﻿using ChopApp.Models;
+﻿using ChopApp.Infrastructure;
+using ChopApp.Models;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +13,17 @@ namespace ChopApp.Controllers
     {
         public ActionResult Index()
         {
-          HomepicClient hc = new HomepicClient();
-            ViewBag.listHomepics = hc.findAll();
-            return View();
+            BLLServiceGateway<IEnumerable<HomePic>> gate = new BLLServiceGateway<IEnumerable<HomePic>>();
+            var homepics = gate.GetItems("api/HomePic/");
+
+            return View(homepics);
         }
 
+        public ActionResult Contact()
+        {
+            ViewBag.Title = "Home Page";
+
+            return View();
+        }
     }
 }

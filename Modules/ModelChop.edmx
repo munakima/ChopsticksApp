@@ -5,6 +5,36 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="ChopsticksDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Booking">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CustPhoneNum" Type="nvarchar" MaxLength="20" />
+          <Property Name="CustPersonNum" Type="int" Nullable="false" />
+          <Property Name="CustBabyNum" Type="int" />
+          <Property Name="Nowday" Type="datetime" Nullable="false" />
+          <Property Name="BookingTime" Type="datetime" Nullable="false" />
+          <Property Name="TableNum" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Food">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategaryId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="Detail" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="HomePic">
           <Key>
             <PropertyRef Name="Id" />
@@ -12,14 +42,115 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Url" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MenuTypeId" Type="int" Nullable="false" />
+          <Property Name="FoodId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Food_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Food" Type="Self.Food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Food">
+              <PropertyRef Name="CategaryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_Food">
+          <End Role="Food" Type="Self.Food" Multiplicity="1" />
+          <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="FoodId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_MenuType">
+          <End Role="MenuType" Type="Self.MenuType" Multiplicity="1" />
+          <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="MenuTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ChopsticksDBModelStoreContainer">
+          <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HomePic" EntityType="Self.HomePic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MenuType" EntityType="Self.MenuType" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Food_Category" Association="Self.FK_Food_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Food" EntitySet="Food" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_Food" Association="Self.FK_Menu_Food">
+            <End Role="Food" EntitySet="Food" />
+            <End Role="Menu" EntitySet="Menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_MenuType" Association="Self.FK_Menu_MenuType">
+            <End Role="MenuType" EntitySet="MenuType" />
+            <End Role="Menu" EntitySet="Menu" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ChopsticksDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Booking">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CustPhoneNum" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CustPersonNum" Type="Int32" Nullable="false" />
+          <Property Name="CustBabyNum" Type="Int32" />
+          <Property Name="Nowday" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BookingTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TableNum" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Foods" Relationship="Self.FK_Food_Category" FromRole="Category" ToRole="Food" />
+        </EntityType>
+        <EntityType Name="Food">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategaryId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Food_Category" FromRole="Food" ToRole="Category" />
+          <NavigationProperty Name="Menus" Relationship="Self.FK_Menu_Food" FromRole="Food" ToRole="Menu" />
+        </EntityType>
         <EntityType Name="HomePic">
           <Key>
             <PropertyRef Name="Id" />
@@ -27,8 +158,79 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuTypeId" Type="Int32" Nullable="false" />
+          <Property Name="FoodId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Food" Relationship="Self.FK_Menu_Food" FromRole="Menu" ToRole="Food" />
+          <NavigationProperty Name="MenuType" Relationship="Self.FK_Menu_MenuType" FromRole="Menu" ToRole="MenuType" />
+        </EntityType>
+        <EntityType Name="MenuType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Menus" Relationship="Self.FK_Menu_MenuType" FromRole="MenuType" ToRole="Menu" />
+        </EntityType>
+        <Association Name="FK_Food_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Food" Type="Self.Food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Food">
+              <PropertyRef Name="CategaryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_Food">
+          <End Role="Food" Type="Self.Food" Multiplicity="1" />
+          <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="FoodId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_MenuType">
+          <End Role="MenuType" Type="Self.MenuType" Multiplicity="1" />
+          <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="MenuTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ChopsticksDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bookings" EntityType="Self.Booking" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Foods" EntityType="Self.Food" />
           <EntitySet Name="HomePics" EntityType="Self.HomePic" />
+          <EntitySet Name="Menus" EntityType="Self.Menu" />
+          <EntitySet Name="MenuTypes" EntityType="Self.MenuType" />
+          <AssociationSet Name="FK_Food_Category" Association="Self.FK_Food_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Food" EntitySet="Foods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_Food" Association="Self.FK_Menu_Food">
+            <End Role="Food" EntitySet="Foods" />
+            <End Role="Menu" EntitySet="Menus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_MenuType" Association="Self.FK_Menu_MenuType">
+            <End Role="MenuType" EntitySet="MenuTypes" />
+            <End Role="Menu" EntitySet="Menus" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -36,11 +238,61 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ChopsticksDBModelStoreContainer" CdmEntityContainer="ChopsticksDBEntities">
+          <EntitySetMapping Name="Bookings">
+            <EntityTypeMapping TypeName="ChopsticksDBModel.Booking">
+              <MappingFragment StoreEntitySet="Booking">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CustName" ColumnName="CustName" />
+                <ScalarProperty Name="CustPhoneNum" ColumnName="CustPhoneNum" />
+                <ScalarProperty Name="CustPersonNum" ColumnName="CustPersonNum" />
+                <ScalarProperty Name="CustBabyNum" ColumnName="CustBabyNum" />
+                <ScalarProperty Name="Nowday" ColumnName="Nowday" />
+                <ScalarProperty Name="BookingTime" ColumnName="BookingTime" />
+                <ScalarProperty Name="TableNum" ColumnName="TableNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="ChopsticksDBModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Foods">
+            <EntityTypeMapping TypeName="ChopsticksDBModel.Food">
+              <MappingFragment StoreEntitySet="Food">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CategaryId" ColumnName="CategaryId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="HomePics">
             <EntityTypeMapping TypeName="ChopsticksDBModel.HomePic">
               <MappingFragment StoreEntitySet="HomePic">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Url" ColumnName="Url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="ChopsticksDBModel.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MenuTypeId" ColumnName="MenuTypeId" />
+                <ScalarProperty Name="FoodId" ColumnName="FoodId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuTypes">
+            <EntityTypeMapping TypeName="ChopsticksDBModel.MenuType">
+              <MappingFragment StoreEntitySet="MenuType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

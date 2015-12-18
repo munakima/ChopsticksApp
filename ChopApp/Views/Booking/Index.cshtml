@@ -1,0 +1,85 @@
+﻿@model Models.Booking
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="" style="background-color:black; color:white ;margin-top:30px;padding:30px 0px 0 20px;height:600px">
+
+    <h1 style="font-weight:900;font-size:xx-large">MAKE A RESERVATION</h1>
+    <br />
+    <br />
+    @using (Html.BeginForm("Index", "Booking", FormMethod.Post))
+    {
+        <form class="form-horizontal">
+            <fieldset>
+
+                <div class="form-group">
+                    <label for="inputName" class="col-lg-2 control-label">@Html.LabelFor(model => model.CustBabyNum)</label>
+                    <div class="col-lg-10">
+                        @Html.TextBoxFor(model => model.CustName, new { @class = "form-control", id = "inputName", placeholder = "Your name" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p>   &nbsp; &nbsp; </p>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputNum" class="col-lg-2 control-label">@Html.LabelFor(model => model.CustPhoneNum)</label>
+                    <div class="col-lg-10">
+                        @Html.TextBoxFor(model => model.CustPhoneNum, new { @class = "form-control", id = "inputNum", placeholder = "Your phone number" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>   &nbsp; &nbsp; </p>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="select" class="col-lg-2 control-label">@Html.LabelFor(model => model.CustPersonNum)</label>
+                    <div class="col-lg-10">
+                        @Html.DropDownListFor(model => model.CustPersonNum, (IEnumerable<SelectListItem>)ViewBag.PersonAdult, new { @class = "form-control" })
+                       
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>   &nbsp; &nbsp; </p>
+                </div>
+
+                <div class="form-group">
+                    <label for="select" class="col-lg-2 control-label">@Html.LabelFor(model => model.CustBabyNum)</label>
+                    <div class="col-lg-10">            
+                   @Html.DropDownListFor(model => model.CustBabyNum,(IEnumerable<SelectListItem>)ViewBag.PersonBaby, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>   &nbsp; &nbsp; </p>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="inputTime" class="col-lg-2 control-label">@Html.LabelFor(model => model.BookingTime)</label>
+                    <div class="col-lg-10">
+                        @Html.TextBoxFor(model => model.BookingTime, new { @class = "form-control", id = "inputTime", placeholder = "2000/01/01 18:00" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p>   &nbsp; &nbsp; </p>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="reset" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    }
+</div>

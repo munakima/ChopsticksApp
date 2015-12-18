@@ -1,0 +1,57 @@
+﻿@model Models.Menu
+@{
+    ViewBag.Title = "Create";
+}
+
+<div style="background:white; padding:20px;margin-top:80px">
+    <h1 style="font-weight:900 ; text-align:center">Add a Chinese food into Chinese buffet menu</h1>
+    <div style="margin:0px 50px" class="container">
+        <h1></h1>
+        <div class="bs-docs-section">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="page-header">
+                        <h1 id="forms">Forms</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="well bs-component">
+                        @using (Html.BeginForm("CreateChineseBuffet", "AdminMenu", FormMethod.Post))
+                        {
+                            <form class="form-horizontal">
+                                <fieldset>
+                                    <legend>Create</legend>
+                                    <br />
+                                    <div class="form-group">
+                                        <label for="inputCategory" class="col-md-3 control-label">@Html.LabelFor(model => model.FoodId, "Food")</label>
+                                        <div class="col-lg-10">
+                                            @Html.DropDownList("FoodId")
+                                            @Html.ValidationMessageFor(model => model.FoodId)
+                                        </div>
+                                    </div>
+
+                                    <br />
+                                    <div>
+                                        <div class="col-lg-8">
+                                            <button type="reset" class="btn btn-default">Reset</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <button type="submit" class="btn btn-primary">Submit</button> @Html.HiddenFor(model => model.Id)
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                            <a class="btn btn-success" href="@Url.Action("AdminChineseBuffet", "AdminMenu", "AdminMenu")">cancel</a>
+
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

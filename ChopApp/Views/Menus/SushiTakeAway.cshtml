@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Models.Menu>
+@{
+    ViewBag.Title = "Home Page";
+}
+<div style="background:black;color:white;height:600px;padding-top:30px; margin-top:30px;">
+    <h1 style="font-weight:800;text-align:center"> Sushi Take Away Menu</h1>
+    <hr style="border:3px double #F00" width="90%" size="3" />
+    @foreach (var menu in Model)
+    {
+        <div class="col-md-6">
+            <h3>@menu.food.Name</h3>
+            <h4>@menu.food.Detail.......................................................................kr @menu.food.Price</h4>
+        </div>
+    }
+
+</div>
+
+
